@@ -1,0 +1,58 @@
+name: Landingpage Deployment
+
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check out Repository
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build the web site
+              run: npm run build
+
+            - name: Determine Docker Image Tag
+              id: docker_tag
+              run: echo "tag=$(date +%Y-%m-%d_%H-%M-%S)" >> $GITHUB_ENV
+
+            - name: Log in to Docker Hub
+              run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+            - name: Build the Docker image
+              run: docker build -t sedatd/weddy_landing:${{ env.tag }} .
+
+            - name: Push the Docker image
+              run: docker push sedatd/weddy_landing:${{ env.tag }}
+
+            - name: Deploy to Server via SSH
+              uses: appleboy/ssh-action@v0.1.2
+              with:
+                  host: ${{ secrets.SERVER_IP }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  password: ${{ secrets.SSH_PASSWORD }}
+                  script: |
+                      container_id=$(docker ps --filter "publish=8080" --format '{{.ID}}')
+                       if [ -n "$container_id" ]; then
+                           echo "Stopping the container running on port 8080..."
+                           docker stop $container_id || true
+                           echo "Removing the container running on port 8080..."
+                           docker rm $container_id || true
+                       fi
+                       echo "Pulling the latest image..."
+                       docker pull sedatd/weddy_landing:${{ env.tag }}
+                       echo "Running the new container..."
+                       docker run -d --name weddy_landing --restart=always \
+                       -p 8080:80 \
+                       sedatd/weddy_landing:${{ env.tag }}
