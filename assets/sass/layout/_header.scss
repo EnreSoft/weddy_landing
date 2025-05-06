@@ -190,49 +190,98 @@
 
 
 
-	.brand-logo {
-		padding: 0;
+	// .brand-logo {
+	// 	padding: 0;
 
+	// 	.navbar-brand {
+	// 		margin-top: -35px;
+	// 		padding-bottom: 0 !important;
+	// 		top: 0;
+
+	// 		@media(max-width:1600px) {
+	// 			margin-top: -25px;
+	// 		}
+
+	// 		@media(max-width:1199px) {
+	// 			margin-top: -15px;
+	// 		}
+
+	// 		@media(max-width:991px) {
+	// 			margin-top: 0px;
+	// 		}
+
+
+	// 		&:before {
+	// 			display: none;
+	// 		}
+
+	// 		img {
+	// 			max-width: 400px;
+
+	// 			@media(max-width:1600px) {
+	// 				max-width: 320px;
+	// 			}
+
+	// 			@media(max-width:1300px) {
+	// 				max-width: 280px;
+	// 			}
+
+	// 			@media(max-width:1200px) {
+	// 				max-width: 230px;
+	// 			}
+
+	// 		}
+	// 	}
+	// }
+
+	.brand-logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh; // Ortalamayı mümkün kılar
+		padding: 0;
+	
 		.navbar-brand {
-			margin-top: -35px;
+			// margin-top kaldırıldı çünkü yukarı ittirmeye neden oluyordu
+			// margin-top: -35px;
 			padding-bottom: 0 !important;
 			top: 0;
-
+			position: static; // Ortalamayı bozabilecek relative konumlandırma kaldırıldı
+	
 			@media(max-width:1600px) {
-				margin-top: -25px;
+				// margin-top: -25px;
 			}
-
+	
 			@media(max-width:1199px) {
-				margin-top: -15px;
+				// margin-top: -15px;
 			}
-
+	
 			@media(max-width:991px) {
-				margin-top: 0px;
+				// margin-top: 0px;
 			}
-
-
+	
 			&:before {
 				display: none;
 			}
-
+	
 			img {
 				max-width: 400px;
-
+	
 				@media(max-width:1600px) {
 					max-width: 320px;
 				}
-
+	
 				@media(max-width:1300px) {
 					max-width: 280px;
 				}
-
+	
 				@media(max-width:1200px) {
 					max-width: 230px;
 				}
-
 			}
 		}
 	}
+	
 
 	.social-info {
 		ul {

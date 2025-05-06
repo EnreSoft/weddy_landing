@@ -2,6 +2,7 @@
 
 $(document).ready(function ($) {
 	"use strict";
+	
 });
 
 // Banner Moving JS Start

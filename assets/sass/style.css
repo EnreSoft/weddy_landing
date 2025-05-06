@@ -2179,6 +2179,8 @@ a.ui-button:active,
 
 .wpo-site-header .navbar-brand {
     position: relative;
+    margin-left: auto; /* Sol boşluk otomatik olarak büyür, sağa yaslar */
+    margin-right: 0; /* Sağ boşluk sıfırlanır */
 }
 
 @media (max-width: 991px) {
