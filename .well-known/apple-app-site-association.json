@@ -2,7 +2,12 @@
   "applinks": {
     "apps": [],
     "details": [
-      { "appID": "LQ44RMMRH5.com.entresoft.Weddy", "paths": ["/*"] }
+      {
+        "appID": "LQ44RMMRH5.com.entresoft.Weddy",
+        "paths": [
+          "/*"
+        ]
+      }
     ]
   }
 }
