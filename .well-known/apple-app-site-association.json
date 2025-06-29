@@ -1,1 +1,8 @@
-{"applinks":{"apps":[],"details":[{"appID":"TEAM_ID.com.entresoft.Weddy","paths":["*"]}]}}
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      { "appID": "LQ44RMMRH5.com.entresoft.Weddy", "paths": ["/*"] }
+    ]
+  }
+}
