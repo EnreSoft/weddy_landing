@@ -50,24 +50,24 @@
         var windowWidth = window.innerWidth;
         var mainNav = $(".navigation-holder");
         var smallNav = $(".navigation-holder > .small-nav");
-        var subMenu = smallNav.find(".sub-menu");
-        var megamenu = smallNav.find(".mega-menu");
-        var menuItemWidthSubMenu = smallNav.find(".menu-item-has-children > a");
+        // var subMenu = smallNav.find(".sub-menu");
+        // var megamenu = smallNav.find(".mega-menu");
+        // var menuItemWidthSubMenu = smallNav.find(".menu-item-has-children > a");
 
-        if (windowWidth <= 991) {
-            subMenu.hide();
-            megamenu.hide();
-            menuItemWidthSubMenu.on("click", function (e) {
-                var $this = $(this);
-                $this.siblings().slideToggle();
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                $this.toggleClass("rotate");
-            })
-        } else if (windowWidth > 991) {
-            mainNav.find(".sub-menu").show();
-            mainNav.find(".mega-menu").show();
-        }
+        // if (windowWidth <= 991) {
+        //     subMenu.hide();
+        //     megamenu.hide();
+        //     menuItemWidthSubMenu.on("click", function (e) {
+        //         var $this = $(this);
+        //         $this.siblings().slideToggle();
+        //         e.preventDefault();
+        //         e.stopImmediatePropagation();
+        //         $this.toggleClass("rotate");
+        //     })
+        // } else if (windowWidth > 991) {
+        //     mainNav.find(".sub-menu").show();
+        //     mainNav.find(".mega-menu").show();
+        // }
     }
 
     smallNavFunctionality();
