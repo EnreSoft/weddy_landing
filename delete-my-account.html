@@ -74,31 +74,59 @@
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet" />
     <link href="assets/css/jquery-ui.css" rel="stylesheet" />
     <link href="assets/sass/style.css" rel="stylesheet" />
+
+
+  
+       <style>
+      
+      /* Eşit yükseklik için parent row'u flex yap */
+.office-info .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Her col sütunu eşit boyda olsun */
+.office-info .col {
+  display: flex;
+}
+
+/* Bu kutuların yüksekliği eşitlensin */
+.office-info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.menu-close {
+  position: relative;
+  width: 50px;      /* örnek buton genişliği */
+  height: 50px;     /* örnek buton yüksekliği */
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.menu-close i {
+  font-size: inherit;  /* X işaretinin boyutu */
+}
+
+
+
+
+
+    </style>
+
   </head>
 
   <body>
-    <div id="top-header" style="background-color: #D4B0A5; padding: 5px 20px; text-align: center; font-size: 15px;">
-        <a href="#apple" style="
-            display: inline-block;
-            margin-right: 15px;
-            padding: 5px 10px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #000;">Download
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="height: 16px; vertical-align: middle;">
-        </a>
-
-        <a href="#android" style="
-            display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #000;">Download
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="height: 16px; vertical-align: middle;">
-        </a>
-      </div>
     <header id="header">
       <div class="wpo-site-header wpo-header-style-1" id="sticky-header">
         <nav class="navigation navbar navbar-expand-lg navbar-light">
@@ -150,11 +178,10 @@
                   <button class="menu-close"><i class="ti-close"></i></button>
                   <ul class="nav navbar-nav mb-2 mb-lg-0">
                     <li class="menu-item-has-children">
-                      <a class="active" href="index.html">Home</a>
+                      <a href="index.html">Home</a>
                       
                     </li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="account.html">Account</a></li>
                     <li><a href="#contact">Contact</a></li>
 
                           </ul>
@@ -218,30 +245,6 @@
 
 <p id="resultMessage"></p>
 
-<script>
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('resultMessage').textContent = data.message || 'Login successful!';
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      document.getElementById('resultMessage').textContent = 'An error occurred.';
-    });
-  });
-</script>
 
     </main>
 
@@ -260,7 +263,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Address</h2>
-                                        <p>7 Green Lake Street Crawfordsville, IN 47933</p>
+                                        <p>136 KINGSLAND RD STE 1188 CLIFTON, NJ 07014</p>
                                     </div>
                                 </div>
                             </div> 
@@ -273,8 +276,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Email Us</h2>
-                                        <p>weddy@gmail.com</p>
-                                        <p>weddy@gmail.com</p>
+                                        <p>enresoft@gmail.com</p>
                                     </div>
                                 </div>
                             </div> 
@@ -287,8 +289,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Call Now</h2>
-                                        <p>+1 800 123 456 789</p>
-                                        <p>+1 800 123 654 987</p>
+                                        <p>+1 469 850 5252</p>
                                     </div>
                                 </div>
                             </div> 
@@ -361,7 +362,6 @@
                 <!-- <li><a href="portfolio-grid.html">Portfolio</a></li> -->
                  <!-- TODO: Blog will be.. -->
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="account.html">Account</a></li>
                 <!-- <li><a href="shop.html">Shop</a></li> -->
                 <li><a href="#contact">Contact</a></li>
               </ul>
@@ -389,6 +389,9 @@
             </div>
           </div>
           <div class="col-12">
+            <div style="margin-top: 1.2rem;">
+                <a style="color: #D4B0A5;" href="delete-my-account.html">Delete My Account</a>
+            </div>
             <div class="copyright">
               <p>
                 © Copyright 2025 | <a href="index.html">Weddy</a> | All
@@ -401,5 +404,68 @@
         </div>
       </div>
     </div>
+
+    
+<script>
+  document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    try {
+      // 1. Send login request
+      const loginResponse = await fetch('https://dev.weddy.online/api/v1/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      const loginData = await loginResponse.json();
+
+      // 2. If login fails, show error and stop
+      if (!loginResponse.ok) {
+        document.getElementById('resultMessage').textContent = loginData.message || 'Login failed.';
+        return;
+      }
+
+      // 3. Get token and userId from the login response
+      const token = loginData.token;
+      const userId = loginData.user.id;
+
+      // 4. Send DELETE request to delete the account
+      const deleteResponse = await fetch(`https://dev.weddy.online/api/v1/user/${userId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      // 5. Handle account deletion response
+      if (deleteResponse.ok) {
+        document.getElementById('resultMessage').textContent = 'Your account has been deleted.';
+        localStorage.clear(); // Clear any stored data (just in case)
+      } else {
+        const deleteData = await deleteResponse.json();
+        document.getElementById('resultMessage').textContent = deleteData.message || 'Failed to delete account.';
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      document.getElementById('resultMessage').textContent = 'An unexpected error occurred.';
+    }
+  });
+</script>
+
+
+<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/jquery.dlmenu.js"></script>
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

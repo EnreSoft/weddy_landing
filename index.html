@@ -27,6 +27,30 @@
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet" />
     <link href="assets/css/jquery-ui.css" rel="stylesheet" />
     <link href="assets/sass/style.css" rel="stylesheet" />
+
+    <style>
+      
+      /* Eşit yükseklik için parent row'u flex yap */
+.office-info .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Her col sütunu eşit boyda olsun */
+.office-info .col {
+  display: flex;
+}
+
+/* Bu kutuların yüksekliği eşitlensin */
+.office-info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+    </style>
   </head>
 
   <body>
@@ -46,29 +70,6 @@
       </div>
       <!-- end preloader -->
       <!-- Start header -->
-      <div id="top-header" style="background-color: #D4B0A5; padding: 5px 20px; text-align: center; font-size: 15px;">
-        <a href="#apple" style="
-            display: inline-block;
-            margin-right: 15px;
-            padding: 5px 10px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #000;">Download
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="height: 16px; vertical-align: middle;">
-        </a>
-
-        <a href="#android" style="
-            display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #000;">Download
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="height: 16px; vertical-align: middle;">
-        </a>
-      </div>
-
 
 
       <header id="header">
@@ -86,28 +87,13 @@
                     </button>
                   </div>
                 </div>
+
+
                 <div class="col-lg-2 col-md-6 col-6 d-lg-block d-none">
-                  <a  href="index.html">
-                    <img style="width: 200px; height: 80px; background-color: #D4B0A5; border-radius: 10px;" src="assets/images/weddy-logo-white.svg" alt=""/>
-                  </a>
-                  <!-- <div class="social-info">
-                    <ul>
-                      <li>
-                        <a href="#"
-                          ><i class="fi flaticon-facebook-app-symbol"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fi flaticon-twitter"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fi flaticon-linkedin"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fi flaticon-instagram-1"></i></a>
-                      </li>
-                    </ul>
-                  </div> -->
+                  
+                      <a  href="index.html">
+                        <img style="width: 200px; height: 80px; background-color: #D4B0A5; border-radius: 10px;" src="assets/images/weddy-logo-white.svg" alt=""/>
+                      </a>                 
                 </div>
                 <div class="col-md-6 col-6 d-lg-none dl-block">
                   <div class="navbar-header">
@@ -125,168 +111,14 @@
                     <button class="menu-close"><i class="ti-close"></i></button>
                     <ul class="nav navbar-nav mb-2 mb-lg-0">
                       <li class="menu-item-has-children">
-                        <a class="active" href="#">Home</a>
-                        <!-- <ul class="sub-menu">
-                          <li>
-                            <a class="active" href="index.html">Main Home</a>
-                          </li>
-                          <li><a href="index-2.html">Wedding Planner</a></li>
-                          <li><a href="index-3.html">Announcement Home</a></li>
-                          <li><a href="index-4.html">Wedding Home</a></li>
-                          <li>
-                            <a href="index-5.html"
-                              >Asian / Indian Wedding Announcement</a
-                            >
-                          </li>
-                          <li>
-                            <a href="index-6.html"
-                              >Asian / Indian Wedding Planner</a
-                            >
-                          </li>
-                          <li><a href="index-7.html">Muslim Wedding</a></li>
-                          <li><a href="index-8.html">Shop Home</a></li>
-                          <li><a href="index-9.html">Wedding Invitation</a></li>
-                        </ul> -->
+                        <a class="active" href="index.html">Home</a>
+                       
                       </li>
-                      <!-- <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                          <li><a href="about.html">About</a></li>
-                          <li class="menu-item-has-children">
-                            <a href="story.html">Our Story</a>
-                            <ul class="sub-menu">
-                              <li>
-                                <a href="story.html">Our Story Style 1</a>
-                              </li>
-                              <li>
-                                <a href="story-2.html">Our Story Style 2</a>
-                              </li>
-                              <li>
-                                <a href="story-3.html">Our Story Style 3</a>
-                              </li>
-                              <li>
-                                <a href="story-4.html">Our Story Style 4</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a href="accomodation.html">Accomodation</a></li>
-                          <li class="menu-item-has-children">
-                            <a href="rsvp.html">RSVP</a>
-                            <ul class="sub-menu">
-                              <li><a href="rsvp.html">RSVP Style 1</a></li>
-                              <li><a href="rsvp-2.html">RSVP Style 2</a></li>
-                              <li><a href="rsvp-3.html">RSVP Style 3</a></li>
-                              <li><a href="rsvp-4.html">RSVP Style 4</a></li>
-                              <li><a href="rsvp-5.html">RSVP Style 5</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="gallery.html">Gallery</a></li>
-                          <li><a href="planner.html">Planners</a></li>
-                          <li><a href="team-single.html">Planner Single</a></li>
-                          <li>
-                            <a href="groom-bride.html">Brides & Grooms</a>
-                          </li>
-                          <li class="menu-item-has-children">
-                            <a href="service.html">Serevice</a>
-                            <ul class="sub-menu">
-                              <li><a href="service.html">Serevice</a></li>
-                              <li><a href="service-s2.html">Serevice S2</a></li>
-                              <li><a href="service-s3.html">Serevice S3</a></li>
-                              <li>
-                                <a href="service-single.html"
-                                  >Serevice Single</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a href="pricing.html">Pricing</a></li>
-                          <li class="menu-item-has-children">
-                            <a href="#">Auth Pages</a>
-                            <ul class="sub-menu">
-                              <li><a href="login.html">Login</a></li>
-                              <li><a href="register.html">Register</a></li>
-                              <li><a href="forgot.html">Forgot Password</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="coming.html">Coming Soon</a></li>
-                          <li><a href="404.html">404 Error</a></li>
-                        </ul>
-                      </li>
-                      <li class="menu-item-has-children">
-                        <a href="portfolio-grid.html">Portfolio</a>
-                        <ul class="sub-menu">
-                          <li>
-                            <a href="portfolio-grid.html">Portfolio Grid</a>
-                          </li>
-                          <li>
-                            <a href="portfolio-masonary.html"
-                              >Portfolio Masonary</a
-                            >
-                          </li>
-                          <li>
-                            <a href="portfolio-masonary-s2.html"
-                              >Portfolio Masonary S2</a
-                            >
-                          </li>
-                          <li>
-                            <a href="portfolio-masonary-s3.html"
-                              >Portfolio Masonary S3</a
-                            >
-                          </li>
-                          <li>
-                            <a href="portfolio-masonary-s4.html"
-                              >Portfolio Masonary S4</a
-                            >
-                          </li>
-                          <li>
-                            <a href="portfolio-single.html">Portfolio Single</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="menu-item-has-children">
-                        <a href="shop.html">Shop</a>
-                        <ul class="sub-menu">
-                          <li><a href="shop.html">Shop</a></li>
-                          <li><a href="shop-single.html">Shop Single</a></li>
-                          <li><a href="cart.html">Cart</a></li>
-                          <li><a href="wishlist.html">Wishlist</a></li>
-                          <li><a href="checkout.html">Checkout</a></li>
-                        </ul>
-                      </li> -->
+                      
                       <li><a href="#blog">Blog</a></li>
-                      <li><a href="account.html">Account</a></li>
                       <li><a href="#contact">Contact</a></li>
                       
-                      <!-- <li class="menu-item-has-children">
-                        <a href="blog.html">Blog</a>
-                        <ul class="sub-menu">
-                          <li><a href="blog.html">Blog right sidebar</a></li>
-                          <li>
-                            <a href="blog-left-sidebar.html"
-                              >Blog left sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="blog-fullwidth.html">Blog fullwidth</a>
-                          </li>
-                          <li class="menu-item-has-children">
-                            <a href="#">Blog details</a>
-                            <ul class="sub-menu">
-                              <li>
-                                <a href="blog-single.html"
-                                  >Blog details right sidebar</a
-                                >
-                              </li>
-                              <li>
-                                <a href="blog-single-left-sidebar.html"
-                                  >Blog details left sidebar</a
-                                >
-                              </li>
-                              <li>
-                                <a href="blog-single-fullwidth.html"
-                                  >Blog details fullwidth</a
-                                >
-                              </li> -->
+                      
                             </ul>
                           </li>
                         </ul>
@@ -318,93 +150,20 @@
                         <a href="#"><i class="fi flaticon-instagram-1"></i></a>
                       </li>
                     </ul>
-                  </div>
+
+                  <!-- <div style="background-color:#D4B0A5; border: 1px solid #D4B0A5; border-radius: 10px; display: flex; align-items: center; padding: 0.5rem;">
+                      <a href="#ios" style="text-decoration: none;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="margin-left: 2rem; margin-right: 5px; height: 30px; width: 30px; flex-shrink: 0;">
+                      </a>
+                   
+                      <a href="#android" style="text-decoration: none;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="margin-right: 1rem; margin-left: 5px; height: 35px; width: 35px; flex-shrink: 0;">
+                      </a>
+                  </div>     -->
+</div>
 
 
-                    <!-- <div class="header-search-form-wrapper">
-                      <div class="cart-search-contact">
-                        <button class="search-toggle-btn">
-                          <i class="fi flaticon-search"></i>
-                        </button>
-                        <div class="header-search-form">
-                          <form>
-                            <div>
-                              <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Search here..."
-                              />
-                              <button type="submit">
-                                <i class="fi flaticon-search"></i>
-                              </button>
-                            </div>
-                          </form>
-                        </div>
-                      </div> 
-                    </div> -->
-                    <!-- <div class="mini-cart">
-                      <button class="cart-toggle-btn">
-                        <i class="fi flaticon-shopping-cart"></i>
-                        <span class="cart-count">2</span>
-                      </button>
-                      <div class="mini-cart-content">
-                        <button class="mini-cart-close">
-                          <i class="ti-close"></i>
-                        </button>
-                        <div class="mini-cart-items">
-                          <div class="mini-cart-item clearfix">
-                            <div class="mini-cart-item-image">
-                              <a href="shop.html"
-                                ><img
-                                  src="assets/images/shop/mini-cart/img-1.jpg"
-                                  alt
-                              /></a>
-                            </div>
-                            <div class="mini-cart-item-des">
-                              <a href="shop.html">Wedding Gown</a>
-                              <span class="mini-cart-item-price"
-                                >$20.15 x 1</span
-                              >
-                              <span class="mini-cart-item-quantity"
-                                ><a href="#"><i class="ti-close"></i></a
-                              ></span>
-                            </div>
-                          </div>
-                          <div class="mini-cart-item clearfix">
-                            <div class="mini-cart-item-image">
-                              <a href="shop.html"
-                                ><img
-                                  src="assets/images/shop/mini-cart/img-2.jpg"
-                                  alt
-                              /></a>
-                            </div>
-                            <div class="mini-cart-item-des">
-                              <a href="shop.html">Bridal Flower</a>
-                              <span class="mini-cart-item-price"
-                                >$13.25 x 2</span
-                              >
-                              <span class="mini-cart-item-quantity"
-                                ><a href="#"><i class="ti-close"></i></a
-                              ></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="mini-cart-action clearfix">
-                          <span class="mini-checkout-price"
-                            >Subtotal: <span>$215.14</span></span
-                          >
-                          <div class="mini-btn">
-                            <a href="checkout.html" class="view-cart-btn s1"
-                              >Checkout</a
-                            >
-                            <a href="cart.html" class="view-cart-btn"
-                              >View Cart</a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                  </div>
+                   </div>
                 </div>
               </div>
             </div>
@@ -412,6 +171,63 @@
           </nav>
         </div>
       </header>
+
+
+
+
+
+      <div id="sub-header" style="
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  height: 20rem;
+">
+  
+  <a href="#ios" style="
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6b6b6b;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: sans-serif;
+    gap: 8px;
+    margin-right: 2rem;
+   
+  ">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="height: 30px; width: 30px; ">
+    Download for iOS
+  </a>
+
+  <a href="#android" style="
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6b6b6b;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: sans-serif;
+    gap: 8px;
+    margin-left: 2rem;
+  ">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="height: 30px; width: 30px;">
+    Download for Android
+  </a>
+
+</div>
+
+
+
+
+
+
+
+      
       <!-- end of header -->
       <!-- start of wpo-hero-section -->
       <section class="wpo-hero-section">
@@ -474,6 +290,7 @@
                 <div
                   class="wpo-about-text wow fadeInRightSlow"
                   data-wow-duration="1600ms"
+                 
                 >
                   <h2>About Us</h2>
                   <h4>We Make Every Wedding Unforgettable & Unique.</h4>
@@ -491,7 +308,9 @@
                 <div
                   class="wpo-about-text wow fadeInLeftSlow"
                   data-wow-duration="1700ms"
+                  style="margin-top: 5rem;"
                 >
+
                   <h2>Our Story</h2>
                   <h4>Our Story Is Rooted in Love & Celebration</h4>
                   <p>
@@ -754,106 +573,7 @@
       <section class="wpo-banner-section">
         <h4>We Are Waiting for Celebrate Your Love</h4>
       </section>
-      <!-- end wpo-banner-section -->
-      <!-- start wpo-team-section -->
-      <!-- <section class="wpo-team-section section-padding">
-        <div class="container">
-          <div class="wpo-section-title">
-            <h4>Our Organizers</h4>
-            <h2>Awesome Team Member</h2>
-          </div>
-          <div class="wpo-team-wrap">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div
-                  class="wpo-team-item wow fadeInUp"
-                  data-wow-duration="1000ms"
-                >
-                  <div class="wpo-team-img">
-                    <img src="assets/images/team/img-1.jpg" alt="" />
-                  </div>
-                  <div class="wpo-team-text">
-                    <h3><a href="team-single.html">Margarate Bennet</a></h3>
-                    <span>Dress Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div
-                  class="wpo-team-item wow fadeInUp"
-                  data-wow-duration="1200ms"
-                >
-                  <div class="wpo-team-img">
-                    <img src="assets/images/team/img-2.jpg" alt="" />
-                  </div>
-                  <div class="wpo-team-text">
-                    <h3><a href="team-single.html">Robert William</a></h3>
-                    <span>Wedding Planner</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div
-                  class="wpo-team-item wow fadeInUp"
-                  data-wow-duration="1400ms"
-                >
-                  <div class="wpo-team-img">
-                    <img src="assets/images/team/img-3.jpg" alt="" />
-                  </div>
-                  <div class="wpo-team-text">
-                    <h3><a href="team-single.html">Henry D’suza</a></h3>
-                    <span>Assistant</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div
-                  class="wpo-team-item wow fadeInUp"
-                  data-wow-duration="1600ms"
-                >
-                  <div class="wpo-team-img">
-                    <img src="assets/images/team/img-4.jpg" alt="" />
-                  </div>
-                  <div class="wpo-team-text">
-                    <h3><a href="team-single.html">Jenefer Abram</a></h3>
-                    <span>Lead Assistant</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end container -->
-      <!-- end wpo-team-section -->
-      <!-- start wpo-partners-section -->
-      <!-- <section class="wpo-partners-section">
-        <h2 class="hidden">Partners</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col col-xs-12">
-              <div class="partner-grids partners-slider owl-carousel">
-                <div class="grid">
-                  <img src="assets/images/partners/1.png" alt />
-                </div>
-                <div class="grid">
-                  <img src="assets/images/partners/2.png" alt />
-                </div>
-                <div class="grid">
-                  <img src="assets/images/partners/3.png" alt />
-                </div>
-                <div class="grid">
-                  <img src="assets/images/partners/4.png" alt />
-                </div>
-                <div class="grid">
-                  <img src="assets/images/partners/5.png" alt />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </section> -->
-        <!-- end container -->
+      
       <!-- end wpo-partners-section-->
       <!-- start wpo-product-section -->
       <section class="wpo-product-section section-padding">
@@ -1303,7 +1023,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Address</h2>
-                                        <p>7 Green Lake Street Crawfordsville, IN 47933</p>
+                                        <p>136 KINGSLAND RD STE 1188 CLIFTON, NJ 07014</p>
                                     </div>
                                 </div>
                             </div> 
@@ -1316,8 +1036,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Email Us</h2>
-                                        <p>weddy@gmail.com</p>
-                                        <p>weddy@gmail.com</p>
+                                        <p>enresoft@gmail.com</p>
                                     </div>
                                 </div>
                             </div> 
@@ -1330,8 +1049,7 @@
                                     </div>
                                     <div class="office-info-text">
                                         <h2>Call Now</h2>
-                                        <p>+1 800 123 456 789</p>
-                                        <p>+1 800 123 654 987</p>
+                                        <p>+1 469 850 5252</p>
                                     </div>
                                 </div>
                             </div> 
@@ -1403,7 +1121,6 @@
                   <!-- <li><a href="portfolio-grid.html">Portfolio</a></li> -->
                    <!-- TODO: Blog will be.. -->
                   <li><a href="#blog">Blog</a></li>
-                  <li><a href="account.html">Account</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <!-- <li><a href="shop.html">Shop</a></li> -->
                 </ul>
@@ -1431,6 +1148,9 @@
               </div>
             </div>
             <div class="col-12">
+              <div style="margin-top: 1.2rem;">
+                <a style="color: #D4B0A5;" href="delete-my-account.html">Delete My Account</a>
+              </div>
               <div class="copyright">
                 <p>
                   © Copyright 2025 | <a href="index.html">Weddy</a> | All
@@ -1469,7 +1189,23 @@
     </div>
     <!-- end of page-wrapper -->
     <!-- All JavaScript files
+    
     ================================================== -->
+
+
+    <!-- <script>
+    window.addEventListener('scroll', function () {
+      const sticky = document.getElementById('sticky-buttons');
+      if (window.scrollY > 150) {
+        sticky.style.display = 'block';
+      } else {
+        sticky.style.display = 'none';
+      }
+    });
+  </script> -->
+
+
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Plugins for this template -->
