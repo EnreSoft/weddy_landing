@@ -30,18 +30,18 @@
 
     <style>
       
-      /* Eşit yükseklik için parent row'u flex yap */
+    
 .office-info .row {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Her col sütunu eşit boyda olsun */
+
 .office-info .col {
   display: flex;
 }
 
-/* Bu kutuların yüksekliği eşitlensin */
+
 .office-info-item {
   flex: 1;
   display: flex;
@@ -50,6 +50,65 @@
   width: 100%;
 }
 
+.policy-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.policy-links a {
+  text-decoration: underline; /
+  color: #333; 
+  margin-bottom: 5px;
+  transition: color 0.3s ease; 
+}
+
+.policy-links a:hover {
+  color: #D4B0A5; 
+}
+
+
+#sub-header {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    height: 20rem;
+  }
+
+  #sub-header a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6b6b6b;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: sans-serif;
+    gap: 8px;
+  }
+
+  #sub-header img {
+    height: 100px;
+    width: auto;
+  }
+
+  /* Mobil görünüm */
+  @media (max-width: 768px) {
+    #sub-header {
+      flex-direction: column; 
+      align-items: center;    
+      height: auto;          
+      gap: 20px;
+    }
+
+    #sub-header a {
+      margin: 0; 
+    }
+  }
     </style>
   </head>
 
@@ -97,10 +156,7 @@
                 </div>
                 <div class="col-md-6 col-6 d-lg-none dl-block">
                   <div class="navbar-header">
-                    <!-- OLD LOGO -->
-                    <!-- <a class="navbar-brand" href="index.html"
-                      ><img style="height: 50px; background-color: #D4B0A5; border-radius: 10px;" src="assets/images/weddy-logo-white.svg" alt=""
-                    /></a> -->
+                    
                   </div>
                 </div>
                 <div class="col-lg-8 col-md-1 col-1">
@@ -129,9 +185,7 @@
                 </div>
                 <div class="col-lg-2 col-md-2 col-2">
                   <div class="header-right" >
-                    <!-- <a  href="index.html"
-                      ><img style="width: 200px; height: 80px; background-color: #D4B0A5; border-radius: 10px;" src="assets/images/weddy-logo-white.svg" alt=""
-                    /></a> -->
+                   
 
                   <div class="social-info">
                     <ul>
@@ -151,15 +205,7 @@
                       </li>
                     </ul>
 
-                  <!-- <div style="background-color:#D4B0A5; border: 1px solid #D4B0A5; border-radius: 10px; display: flex; align-items: center; padding: 0.5rem;">
-                      <a href="#ios" style="text-decoration: none;">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="margin-left: 2rem; margin-right: 5px; height: 30px; width: 30px; flex-shrink: 0;">
-                      </a>
-                   
-                      <a href="#android" style="text-decoration: none;">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="margin-right: 1rem; margin-left: 5px; height: 35px; width: 35px; flex-shrink: 0;">
-                      </a>
-                  </div>     -->
+                 
 </div>
 
 
@@ -176,56 +222,15 @@
 
 
 
-      <div id="sub-header" style="
-  background-color: #ffffff;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  height: 20rem;
-">
-  
-  <a href="#ios" style="
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #6b6b6b;
-    font-weight: normal;
-    font-size: 30px;
-    font-family: sans-serif;
-    gap: 8px;
-    margin-right: 2rem;
-   
-  ">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" style="height: 30px; width: 30px; ">
-    Download for iOS
+     <div id="sub-header">
+  <a href="#ios">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple">
   </a>
 
-  <a href="#android" style="
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #6b6b6b;
-    font-weight: normal;
-    font-size: 30px;
-    font-family: sans-serif;
-    gap: 8px;
-    margin-left: 2rem;
-  ">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt="Android" style="height: 30px; width: 30px;">
-    Download for Android
+  <a href="#android">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Android">
   </a>
-
 </div>
-
-
-
-
-
-
 
       
       <!-- end of header -->
@@ -1155,9 +1160,10 @@
                 <p>
                   © Copyright 2025 | <a href="index.html">Weddy</a> | All
                   right reserved.
-                  <a href="privacy.html">Privacy Policy</a>
-                  <a href="case-policy.html">Case Policy</a>
-
+                  <div class="policy-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="case-policy.html">Case Policy</a>
+                  </div>
                 </p>
               </div>
             </div>

@@ -32,24 +32,41 @@
 
      <style>
       
-      /* Eşit yükseklik için parent row'u flex yap */
-.office-info .row {
+    .office-info .row {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Her col sütunu eşit boyda olsun */
+
 .office-info .col {
   display: flex;
 }
 
-/* Bu kutuların yüksekliği eşitlensin */
+
 .office-info-item {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+.policy-links {
+  margin-top: 10px; /* Adds space above the links so they appear on the next line */
+  display: flex;
+  flex-direction: column; /* Stacks the links vertically */
+  align-items: center; /* Aligns links to the center */
+}
+
+.policy-links a {
+  text-decoration: underline; /* Underlines the links */
+  color: #333; /* Default link color */
+  margin-bottom: 5px; /* Adds space between the links */
+  transition: color 0.3s ease; /* Smooth transition effect on hover */
+}
+
+.policy-links a:hover {
+  color: #D4B0A5; /* Changes link color when hovered */
 }
 
     </style>
@@ -325,8 +342,10 @@
               <p>
                 © Copyright 2025 | <a href="index.html">Weddy</a> | All
                 right reserved.
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="case-policy.html">Case Policy</a>
+                <div class="policy-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="case-policy.html">Case Policy</a>
+                </div>
 
               </p>
             </div>
